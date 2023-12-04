@@ -15,11 +15,20 @@ export class BasicPageComponent {
   // });
 
   public myForm : FormGroup = this.fb.group({
-    
+    name: [''],
+    price: [0],
+    inStorage: [0],
   })
 
   constructor(private fb : FormBuilder){}
 
+  onSave(): void {
+
+    if( this.myForm.invalid ) return
+
+    console.log(this.myForm.value);
+    
+  }
 
 
 }
