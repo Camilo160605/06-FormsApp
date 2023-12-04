@@ -17,7 +17,7 @@ export class SideMenuComponent {
   public reactiveMenu : menuItem[] = [
     {title: 'Basicos', route:'./reactive/basic'},
     {title: 'Dínamicos', route:'./reactive/dynamic'},
-    {title: 'Switches', route:'./reactive/switches'},
+    {title: 'Switches', route:'./reactive/switch'},
   ]
   public authMenu : menuItem[] = [
     {title: 'Registro', route:'./auth'}, 
