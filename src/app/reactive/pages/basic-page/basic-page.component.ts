@@ -37,7 +37,6 @@ export class BasicPageComponent implements OnInit {
     const errors = this.myForm.controls[field].errors || {};
 
     for ( const key of Object.keys(errors) ) {
-        console.log(key);
         switch( key ){
           case 'required' :
             return 'Este campo es requerido'
@@ -57,9 +56,6 @@ export class BasicPageComponent implements OnInit {
 
       return
     }
-
-    console.log(this.myForm.value);
-    
   }
 
 
