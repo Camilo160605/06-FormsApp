@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidatorsService } from 'src/app/shared/services/validator.service';
 
@@ -7,7 +7,7 @@ import { ValidatorsService } from 'src/app/shared/services/validator.service';
   styles: [
   ]
 })
-export class BasicPageComponent implements OnInit {
+export class BasicPageComponent {
 
   // public myForm : FormGroup = new FormGroup({
   //   name: new FormControl(''),
@@ -25,9 +25,6 @@ export class BasicPageComponent implements OnInit {
     private fb : FormBuilder,
     private validatorService : ValidatorsService,
      ){}
-
-  ngOnInit(): void {
-  }
 
   isValidField(field : string ){
     return this.validatorService.isValidField(this.myForm, field)
