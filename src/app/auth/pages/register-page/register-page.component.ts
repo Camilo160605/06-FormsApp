@@ -22,7 +22,6 @@ export class RegisterPageComponent {
     ){}
 
   isValidField( field : string ){
-    // TODO: realizar validaciones
     return this.validatorService.isValidField( this.myForm, field )
   }
 
