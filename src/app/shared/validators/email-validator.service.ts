@@ -12,16 +12,18 @@ export class EmailValidator implements AsyncValidator {
     validate(control: AbstractControl<any, any>): Observable<ValidationErrors | null> {
 
         const email = control.value
-        console.log({email});
 
         const httpCallObservable = new Observable<ValidationErrors | null>(( subscriber )=>{
 
-            console.log({email});
             if ( email === 'camilo@google.com' ){
                 subscriber.next( { emailTaken : true } )
+                subscriber.complete()
             }            
-
-        })
+            subscriber.next(null);
+            subscriber.complete();
+        }).pipe(
+            delay(3000)
+        )
 
         return httpCallObservable;
 

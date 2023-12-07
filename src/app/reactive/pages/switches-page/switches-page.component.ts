@@ -50,8 +50,6 @@ export class SwitchesPageComponent {
       return 
     }
     console.log(this.myForm.value);
-    
-
   }
 
 }
