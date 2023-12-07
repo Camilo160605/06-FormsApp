@@ -28,6 +28,7 @@ export class RegisterPageComponent {
   }
 
   onSubmit() : void {
+    if ( !this.myForm.valid ) return 
     this.myForm.markAllAsTouched();
     console.log(this.myForm.value);
     this.myForm.reset();
