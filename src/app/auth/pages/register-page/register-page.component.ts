@@ -13,9 +13,13 @@ export class RegisterPageComponent {
     // email : ['',[Validators.required, Validators.pattern(this.validatorService.emailPattern)],[new EmailValidator]],
     email : ['',[Validators.required, Validators.pattern(this.validatorService.emailPattern)],[this.emailValidator]],
     username : ['',[Validators.required, this.validatorService.cantBeStrider]],
-    password : ['',[Validators.required, Validators.minLength(6)]],
+    password : ['',[ Validators.required, Validators.minLength(6) ]],
     password2 : ['',[Validators.required]],
-  })
+  }, {
+    validators : [  
+      this.validatorService.isFieldOneEqualsFieldTwo('password', 'password2'),
+    ]
+  });
 
   constructor( 
     private fb : FormBuilder,
@@ -28,8 +32,8 @@ export class RegisterPageComponent {
   }
 
   onSubmit() : void {
-    if ( !this.myForm.valid ) return 
     this.myForm.markAllAsTouched();
+    if ( this.myForm.invalid ) return   
     console.log(this.myForm.value);
     this.myForm.reset();
   }

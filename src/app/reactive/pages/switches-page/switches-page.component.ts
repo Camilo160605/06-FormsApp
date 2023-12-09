@@ -38,7 +38,6 @@ export class SwitchesPageComponent {
           case 'minlength' :
             return `Mínimo ${ errors['minlength'].requiredLength} caracteres`
         }
-        
     }
     return null;
   }
